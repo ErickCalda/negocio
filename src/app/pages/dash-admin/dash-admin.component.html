@@ -1,0 +1,77 @@
+<div class="min-h-screen bg-gray-100 p-4">
+  <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-md p-6">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Dashboard de Administrador</h2>
+
+    <!-- Botón de cerrar sesión -->
+    <div class="flex justify-end mb-4">
+      <button 
+        (click)="logout()" 
+        class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">
+        Cerrar sesión
+      </button>
+    </div>
+
+    <!-- Tabla de usuarios -->
+    <table class="min-w-full table-auto mb-4">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="px-4 py-2 text-left">Nombre</th>
+          <th class="px-4 py-2 text-left">Correo</th>
+          <th class="px-4 py-2 text-left">Saldo</th>
+          <th class="px-4 py-2 text-left">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td class="px-4 py-2">{{ user.usuario }}</td>
+          <td class="px-4 py-2">{{ user.correo }}</td>
+          <td class="px-4 py-2">{{ user.saldo.$numberDecimal }}</td>
+          <td class="px-4 py-2">
+            <!-- Botón para editar saldo -->
+            <button 
+              (click)="selectedUser = user" 
+              class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">
+              Editar saldo
+            </button>
+            <!-- Botón para eliminar usuario -->
+            <button 
+              (click)="deleteUser(user._id)" 
+              class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 ml-2">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Modal para editar saldo -->
+    <div *ngIf="selectedUser" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+      <div class="bg-white p-6 rounded-md shadow-md">
+        <h3 class="text-xl font-semibold mb-4">Editar saldo de {{ selectedUser.nombre }}</h3>
+        <label for="saldo" class="block text-sm font-medium">Nuevo saldo</label>
+        <input 
+          id="saldo" 
+          type="number" 
+          [(ngModel)]="newBalance" 
+          class="mt-2 p-2 border border-gray-300 rounded-md" 
+          placeholder="Nuevo saldo" />
+
+        <div class="mt-4 flex justify-between">
+          <!-- Botón para guardar el saldo actualizado -->
+          <button 
+            (click)="updateSaldoById(selectedUser?._id, newBalance)" 
+            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+            Guardar
+          </button>
+          
+          <!-- Botón para cerrar el modal sin guardar -->
+          <button 
+            (click)="selectedUser = null" 
+            class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

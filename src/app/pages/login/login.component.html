@@ -1,0 +1,52 @@
+<!-- Formulario de inicio de sesión y registro -->
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+  <div class="bg-white p-8 rounded-xl shadow-xl w-full sm:max-w-md">
+    <!-- Título dinámico -->
+    <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6" *ngIf="!isRegister">Iniciar sesión</h2>
+    <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6" *ngIf="isRegister">Crear cuenta</h2>
+
+    <form *ngIf="!isRegister" class="space-y-6" (ngSubmit)="login()">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+        <input id="email" type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese su correo" [(ngModel)]="email" name="email" required>
+      </div>
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <input id="password" type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese su contraseña" [(ngModel)]="password" name="password" required>
+      </div>
+      <div class="flex justify-between items-center">
+        <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-lg shadow-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">Iniciar sesión</button>
+      </div>
+    </form>
+    
+
+    <!-- Formulario de registro -->
+    <form *ngIf="isRegister" class="space-y-6" (ngSubmit)="registerUser()">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+        <input id="name" type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese su nombre completo" [(ngModel)]="name" name="name" required>
+      </div>
+      <div>
+        <label for="emailRegister" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+        <input id="emailRegister" type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese su correo" [(ngModel)]="email" name="email" required>
+      </div>
+      <div>
+        <label for="passwordRegister" class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <input id="passwordRegister" type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese su contraseña" [(ngModel)]="password" name="password" required>
+      </div>
+      <div class="flex justify-between items-center">
+        <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-lg shadow-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">Crear cuenta</button>
+      </div>
+    </form>
+
+    <!-- Enlaces para cambiar entre login y registro -->
+    <div class="mt-4 text-center text-gray-600">
+      <span *ngIf="!isRegister">¿No tienes cuenta? 
+        <button (click)="toggleForm()" class="text-yellow-600 hover:underline">Crear cuenta</button>
+      </span>
+      <span *ngIf="isRegister">¿Ya tienes cuenta? 
+        <button (click)="toggleForm()" class="text-yellow-600 hover:underline">Iniciar sesión</button>
+      </span>
+    </div>
+  </div>
+</div>

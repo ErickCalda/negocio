@@ -1,0 +1,76 @@
+/* Fondo del pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  /* Personalización de fuentes */
+  body {
+    font-family: 'Arial', sans-serif;
+    
+  }
+  
+  input:focus {
+    border-color: #FF9900;
+  }
+  
+  /* Pie de página estilizado */
+  footer p {
+    margin: 0;
+    padding: 5px;
+  }
+  
+
+
+  /* Estilo para el Header */
+header {
+    background-color: #333; /* Gris oscuro para el fondo */
+    color: white;
+    padding: 20px;
+  }
+  
+  /* Estilo de texto de la llamada a la acción */
+  header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF9900; /* Color amarillo Amazon */
+    margin-top: 10px;
+  }
+  
+  /* Estilo de la imagen del logo */
+  header img {
+    width: 50px;
+    height: auto;
+  }
+  
+  /* Estilo del texto que acompaña al botón */
+  header p {
+    font-size: 0.875rem;
+    color: #ffffff;
+    margin-top: 5px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Botón de acción */
+  header button {
+    background-color: #FF9900;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  header button:hover {
+    background-color: #ff6600;
+    transition: background-color 0.3s ease;
+  }
+  
