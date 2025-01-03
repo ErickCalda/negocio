@@ -1,1 +1,0 @@
-import{k as m}from"./chunk-2MOUTIV6.js";import{X as e,ea as t,i,n as r}from"./chunk-C6QHDSMV.js";var s=[{path:"",redirectTo:"&$",pathMatch:"full"},{path:"&$",component:m}],f=(()=>{class o{static{this.\u0275fac=function(n){return new(n||o)}}static{this.\u0275mod=r({type:o})}static{this.\u0275inj=i({imports:[e,t.forChild(s),t]})}}return o})();export{f as DashAdminModuloModule};
