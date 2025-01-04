@@ -1,33 +1,33 @@
-<div class="min-h-screen bg-gray-200 p-6">
+<div class="min-h-screen bg-gray-900 text-white p-6">
   <!-- Contenedor principal -->
-  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg border border-gray-300">
+  <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg border border-gray-700">
     
     <!-- Información del Usuario -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-300 p-6 bg-gray-100">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-700 p-6 bg-gray-850">
       <div class="mb-4 md:mb-0">
-        <h2 class="text-xl md:text-2xl font-bold text-gray-800">Bienvenido, {{userName}}</h2>
-        <p class="text-sm md:text-base text-gray-600">Correo: {{ userCorreo }}</p>
+        <h2 class="text-xl md:text-2xl font-bold text-white">Bienvenido, {{userName}}</h2>
+        <p class="text-sm md:text-base text-gray-400">Correo: {{ userCorreo }}</p>
       </div>
       <button
         (click)="cerrarSesion()"
-        class="bg-yellow-500 text-gray-800 px-6 py-2 text-sm font-medium rounded-md hover:bg-yellow-600 transition focus:outline-none shadow">
+        class="bg-yellow-600 text-gray-900 px-6 py-2 text-sm font-medium rounded-md hover:bg-yellow-700 transition focus:outline-none shadow-lg">
         Cerrar sesión
       </button>
     </div>
 
     <!-- Estado actual del dinero -->
-    <div class="bg-white p-6 border-b border-gray-300">
-      <h3 class="text-lg md:text-xl font-semibold text-gray-700">Estado actual de tu dinero</h3>
+    <div class="bg-gray-900 p-6 border-b border-gray-700">
+      <h3 class="text-lg md:text-xl font-semibold text-white">Estado actual de tu dinero</h3>
       <div class="mt-4">
-        <p class="text-3xl font-bold text-green-600">$ {{userSaldo}}</p>
-        <p class="text-sm text-gray-500">Saldo disponible en tu cuenta</p>
+        <p class="text-3xl font-bold text-green-500">$ {{userSaldo}}</p>
+        <p class="text-sm text-gray-400">Saldo disponible en tu cuenta</p>
       </div>
     </div>
 
     <!-- Texto motivacional -->
-    <div class="bg-white p-6 border-b border-gray-300">
-      <h3 class="text-lg md:text-xl font-semibold text-gray-700">¡Haz que tu dinero trabaje para ti!</h3>
-      <p class="mt-3 text-gray-600 leading-relaxed">
+    <div class="bg-gray-900 p-6 border-b border-gray-700">
+      <h3 class="text-lg md:text-xl font-semibold text-white">¡Haz que tu dinero trabaje para ti!</h3>
+      <p class="mt-3 text-gray-300 leading-relaxed">
         Invertir es el primer paso para alcanzar tus metas financieras y construir un futuro lleno de oportunidades. 
         Deja de preocuparte por el ahorro tradicional y empieza a disfrutar de los beneficios de hacer crecer tu dinero. 
         ¡Es hora de dar el salto hacia el éxito financiero!
@@ -35,9 +35,9 @@
     </div>
 
     <!-- Advertencia sobre riesgos -->
-    <div class="bg-yellow-50 p-6">
-      <h3 class="text-lg font-semibold text-yellow-700">Aviso importante</h3>
-      <p class="mt-3 text-gray-700 leading-relaxed">
+    <div class="bg-yellow-900 p-6">
+      <h3 class="text-lg font-semibold text-yellow-400">Aviso importante</h3>
+      <p class="mt-3 text-gray-300 leading-relaxed">
         Como toda inversión, existen pequeños riesgos, pero no te preocupes: con decisiones bien informadas, 
         las posibilidades de éxito son mucho mayores. Recuerda que el crecimiento financiero siempre implica dar 
         pasos estratégicos. ¡Confía en el proceso y en tu capacidad para decidir!
